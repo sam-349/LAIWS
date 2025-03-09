@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Models</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/models.css') }}">
+</head>
+<body>
+<nav>
+        <div class="logo">LAIWS</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}"> Home</a></li>
+            <li><a href="{{ url_for('about') }}"> About</a></li>
+            <li><a href="{{ url_for('models') }}">Models</a></li>
+        </ul>
+    </nav>
+    <section class="model-main">
+        <div class="main">
+
+            <div class="card">
+                <h3 class="card-title">Document Summarizer</h3>
+                <img class="card-img" src="{{ url_for('static', filename='images/document-icon.png') }}" alt="Guide">
+                <p  class="card-text">content goes here</p>
+                <button class="card-btn"> <a> Check It</a></button>
+            </div>
+            <div class="card">
+                <h3 class="card-title">AI ChatBot</h3>
+                <img class="card-img" src="{{ url_for('static', filename='images/chat-icon.png') }}" alt="chat-bot">
+                <p  class="card-text">Chat Bot</p>
+                <button class="card-btn"> <a > Check It</a></button>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Document Summarizer</h3>
+                <img  class="card-img" src="{{ url_for('static', filename='images/aibot-icon.png') }}" alt="Guide">
+                <p  class="card-text">content goes here</p>
+                <button class="card-btn"> <a> Check It</a></button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

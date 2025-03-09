@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAIWS - AI Legal Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://kit.fontawesome.com/70db074e24.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">LAIWS</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}"> Home</a></li>
+            <li><a href="{{ url_for('about') }}"> About</a></li>
+            <li><a href="{{ url_for('models') }}">Models</a></li>
+        </ul>
+        <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Ai power justice: A path to a more efficient legal system in india</h1>
+            <p class="hero-text">Advanced AI solutions for legal professionals, law firms, and researchers.</p>
+            <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
+        </div>
+    </div>
+
+    <!-- AI Features Section -->
+    <section class="features">
+        <h2>How AI is Transforming Legal Services</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h3>Legal Research</h3>
+                <p>Quickly find case laws, precedents, and legal documents with AI-driven insights.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-solid fa-file-contract"></i>
+                <h3>Document Summarization</h3>
+                <p>Quickly extract key insights and summaries from legal documents.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-solid fa-gavel"></i>
+                <h3>Litigation Prediction</h3>
+                <p>Predict case outcomes and assess risks using AI-powered analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 LAIWS. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

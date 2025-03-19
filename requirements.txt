@@ -1,1 +1,12 @@
-flask
+Flask
+google-generativeai
+PyMuPDF
+python-docx
+Pillow
+pytesseract
+langchain
+langchain-google-genai
+faiss-cpu
+python-dotenv
+PyPDF2
+langchain-coomunity

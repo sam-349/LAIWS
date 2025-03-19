@@ -1,61 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAIWS - AI Legal Services</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="https://kit.fontawesome.com/70db074e24.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAIWS - AI Legal Services</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://kit.fontawesome.com/70db074e24.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+  <div class="main">
     <!-- Navigation Bar -->
     <nav>
-        <div class="logo">LAIWS</div>
-        <ul>
-            <li><a href="{{ url_for('home') }}"> Home</a></li>
-            <li><a href="{{ url_for('about') }}"> About</a></li>
-            <li><a href="{{ url_for('models') }}">Models</a></li>
-        </ul>
-        <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
+      <div class="logo">LAIWS</div>
+      <ul>
+        <li><a href="{{ url_for('home') }}"> Home</a></li>
+        <li><a href="{{ url_for('about') }}"> About</a></li>
+        <li><a href="{{ url_for('models') }}">Models</a></li>
+      </ul>
+      <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Ai power justice: A path to a more efficient legal system in india</h1>
-            <p class="hero-text">Advanced AI solutions for legal professionals, law firms, and researchers.</p>
-            <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
-        </div>
+      <div class="hero-content">
+        <h1 class="hero-title showAnimation">AI power justice: A path to a more efficient legal system in india</h1>
+        <p class="hero-text showAnimation">Advanced AI solutions for legal professionals, law firms, and researchers.</p>
+        <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
+      </div>
     </div>
+  </div>
 
-    <!-- AI Features Section -->
-    <section class="features">
-        <h2>How AI is Transforming Legal Services</h2>
-        <div class="features-container">
-            <div class="feature-card">
-                <i class="fa-solid fa-scale-balanced"></i>
-                <h3>Legal Research</h3>
-                <p>Quickly find case laws, precedents, and legal documents with AI-driven insights.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-file-contract"></i>
-                <h3>Document Summarization</h3>
-                <p>Quickly extract key insights and summaries from legal documents.</p>
-            </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-gavel"></i>
-                <h3>Litigation Prediction</h3>
-                <p>Predict case outcomes and assess risks using AI-powered analysis.</p>
-            </div>
+  <!-- Features Section -->
+  <section class="features">
+    <h2 class="showAnimation">How AI is Transforming Legal Services</h2>
+    <div class="features-container">
+      <div class="feature-card left">
+        <div class="feature-text">
+          <h3>Legal Research</h3>
+          <p>Quickly find case laws and precedents with AI.
+             Access legal documents with AI-driven insights.</p>
         </div>
-    </section>
+        <img src="{{ url_for('static', filename='images/legal research.png') }}" alt="Legal Research">
+      </div>
 
-    <footer>
-        <p>© 2025 LAIWS. All Rights Reserved.</p>
-    </footer>
+      <div class="feature-card right">
+        <div class="feature-text">
+          <h3>Document Summarization</h3>
+          <p>Quickly extract key insights from legal d
+            ocuments and generate concise summaries.</p>
+        </div>
+        <img src="{{ url_for('static', filename='images/document-summarizer.png') }}" alt="Document Summarization">
+      </div>
 
+      <div class="feature-card left">
+        <div class="feature-text">
+          <h3>Litigation Prediction</h3>
+          <p>Use AI-powered analysis to predict case outcomes.
+             Assess risks with advanced legal insights.</p>
+        </div>
+        <img src="{{ url_for('static', filename='images/blind.png') }}" alt="Litigation Prediction">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 LAIWS. All Rights Reserved.</p>
+  </footer>
+
+  <!-- The spotlight element -->
+  <div class="cursor-light"></div>
+
+  <!-- JavaScript for Scroll & Mouse Effects -->
+  <script>
+    // Hero scroll effect: scale up and fade out as you scroll
+    window.addEventListener('scroll', () => {
+      const heroContent = document.querySelector('.hero-content');
+      const scrollY = window.scrollY;
+      // Increase scale and move content upward with scroll; adjust factors as needed
+      let scale = 1 + scrollY / 1000;
+      let opacity = Math.max(1 - scrollY / 300, 0);
+      heroContent.style.transform = `scale(${scale}) translateY(-${scrollY}px)`;
+      heroContent.style.opacity = opacity;
+    });
+
+    // Intersection Observer to animate feature cards on scroll
+    const observerOptions = {
+      threshold: 0.3
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('left')) {
+            entry.target.classList.add('animate-left');
+          }
+          if (entry.target.classList.contains('right')) {
+            entry.target.classList.add('animate-right');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card').forEach(card => {
+      observer.observe(card);
+    });
+
+    // Cursor spotlight effect: follow the mouse
+    const cursorLight = document.querySelector('.cursor-light');
+
+    document.addEventListener('mousemove', (e) => {
+      // Update the position of the spotlight element
+      cursorLight.style.left = `${e.clientX}px`;
+      cursorLight.style.top = `${e.clientY}px`;
+    });
+
+  </script>
 </body>
 </html>

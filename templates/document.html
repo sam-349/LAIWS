@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RAG Model with Flask</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/document.css') }}">
+</head>
+<body>
+    <header>
+        <h1>RAG Model with Flask</h1>
+    </header>
+    <main>
+        <!-- PDF Upload Section -->
+        <section>
+            <h2>Upload PDF Files</h2>
+         <form action="{{ url_for('document') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="pdf_files" accept="application/pdf" multiple required>
+                <button type="submit" name="upload_submit">Submit & Process</button>
+            </form>
+        </section>
+
+        <!-- Question Answering Section -->
+        <section>
+            <h2>Ask a Question</h2>
+            <form action="/" method="post">
+                <input type="text" name="user_question" placeholder="Enter your question here" required>
+                <button type="submit" name="ask_submit">Ask</button>
+            </form>
+        </section>
+
+        <!-- Answer Display -->
+        {% if answer %}
+        <section>
+            <h2>Answer</h2>
+            <p>{{ answer }}</p>
+        </section>
+        {% endif %}
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        {% endwith %}
+    </main>
+</body>
+</html>

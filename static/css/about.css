@@ -3,8 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: black;
+    color: #000;
     text-align: center;
 }
 
@@ -13,9 +13,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #222;
     color: white;
     padding: 15px 30px;
+
 }
 
 .logo {
@@ -41,17 +41,18 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+
+    color:#ffb400;
 }
 
 /* About Section */
 .about {
     padding: 50px 20px;
-    background-color: #fff;
+    background-color: #000;
 }
 
 .about h1 {
-    color: #5a3d5c;
+    color: #ffb400;
     font-size: 36px;
 }
 
@@ -60,51 +61,53 @@ nav ul li a:hover {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+    color:white;
 }
 
 /* Team Section */
-.team {
-    padding: 50px 20px;
-    background-color: #e6e6fa;
-}
-
-.team h2 {
-    color: #5a3d5c;
-    font-size: 32px;
-    margin-bottom: 20px;
+.team{
+    background:black;
+    color:white;
 }
 
 .team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.team-guide-row {
+  margin-bottom: 2rem;
+}
+
+.team-members-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.team-guide,
 .team-member {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 250px;
+  text-align: center;
+  max-width: 200px;
 }
 
+.team-guide img,
 .team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
+.team-guide h3,
 .team-member h3 {
-    margin: 10px 0;
-    color: #333;
+  margin: 0.5rem 0;
 }
 
+.team-guide p,
 .team-member p {
-    color: #777;
-    font-size: 16px;
+  margin: 0;
 }
 
 /* Footer */

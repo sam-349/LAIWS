@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/models.css') }}">
 </head>
 <body>
-<nav>
+    <nav>
         <div class="logo">LAIWS</div>
         <ul>
             <li><a href="{{ url_for('home') }}"> Home</a></li>
@@ -15,28 +15,53 @@
             <li><a href="{{ url_for('models') }}">Models</a></li>
         </ul>
     </nav>
+
     <section class="model-main">
         <div class="main">
-
-            <div class="card">
-                <h3 class="card-title">Document Summarizer</h3>
-                <img class="card-img" src="{{ url_for('static', filename='images/document-icon.png') }}" alt="Guide">
-                <p  class="card-text">content goes here</p>
-                <button class="card-btn"> <a> Check It</a></button>
+            <div class="card" id="chat-with-documents">
+                <h3 class="card-title">Chat with Documents</h3>
+                <img class="card-img" src="{{ url_for('static', filename='images/document-icon.png') }}" alt="Chat With Documents">
+                <p class="card-text">content goes here</p>
+                <a href="{{ url_for('document')}}"><button class="card-btn">Check It</button></a>
             </div>
-            <div class="card">
+            <div class="card highlight" id="ai-chatbot">
                 <h3 class="card-title">AI ChatBot</h3>
-                <img class="card-img" src="{{ url_for('static', filename='images/chat-icon.png') }}" alt="chat-bot">
-                <p  class="card-text">Chat Bot</p>
-                <button class="card-btn"> <a > Check It</a></button>
+                <img class="card-img" src="{{ url_for('static', filename='images/chat-removebg-preview.png') }}" alt="chat-bot">
+                <p class="card-text">Chat Bot</p>
+                <a href="{{ url_for('chatbot')}}"><button class="card-btn">Check It</button></a>
             </div>
-            <div class="card">
-                <h3 class="card-title">Document Summarizer</h3>
-                <img  class="card-img" src="{{ url_for('static', filename='images/aibot-icon.png') }}" alt="Guide">
-                <p  class="card-text">content goes here</p>
-                <button class="card-btn"> <a> Check It</a></button>
+            <div class="card" id="ai-bot">
+                <h3 class="card-title">AI Bot</h3>
+                <img class="card-img" src="{{ url_for('static', filename='images/2003266-removebg-preview.png') }}" alt="Ai bot">
+                <p class="card-text">content goes here</p>
+                <a><button class="card-btn">Check It</button></a>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // x position within the card
+                    const y = e.clientY - rect.top;  // y position within the card
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const deltaX = (x - centerX) / 10; // Adjust shadow X offset
+                    const deltaY = (y - centerY) / 10; // Adjust shadow Y offset
+
+                    card.style.boxShadow = `${deltaX}px ${deltaY}px 10px 2px white`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.boxShadow = '0 4px 5px 2px white'; // Reset to original shadow
+                });
+            });
+        });
+    </script>
 </body>
 </html>

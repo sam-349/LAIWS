@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  background: #dcdcdc;
+}
+
+.chat-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: #dcdcdc;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background-color: #202123;
+  color: #fff;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+.sidebar.active {
+  transform: translateX(-280px);
+}
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.session-list {
+  margin-top: 1rem;
+}
+.new-chat-btn {
+  background-color: #565869;
+  border: none;
+  color: #fff;
+  padding: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.session-list ul {
+  list-style: none;
+  padding: 0;
+}
+.session-list li {
+  margin-bottom: 0.5rem;
+}
+.session-list li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main Chat Area Styles */
+.main-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f8;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+.sidebar.active ~ .main-chat {
+  margin-left: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: #343541;
+  color: #fff;
+  padding:2px 0.8rem;
+}
+
+.model-nav{
+    color:white;
+    text-decoration:none;
+    position:absolute;
+    right:1rem  ;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.chat-history {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  max-width: 40%;
+  word-wrap: break-word;
+}
+.chat-message.user {
+  background-color: white;
+  margin-left: auto;
+
+}
+.chat-message.assistant {
+  background-color: #ebebeb;
+  margin-right: auto;
+}
+
+/* Chat Input and File Upload */
+.chat-input-container {
+  position: absolute;
+  bottom: 1rem  ;
+  left:30%;
+  width:40rem;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  transition: left 0.3s ease;
+  border-radius:25px;
+}
+.sidebar.active ~ .main-chat .chat-input-container {
+  left: 30%;
+}
+.chat-form {
+  flex: 1;
+  display: flex;
+}
+.chat-form input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  outline:none;
+  background:none;
+  color:white;
+
+}
+.chat-form button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#chat_submit{
+    font-size:1.3rem;
+}
+.upload-form {
+  margin-left: 0.5rem;
+}
+.plus-button {
+  font-size: 1.5rem;
+  color: #19a2b8;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.plus-button:hover{
+    border: 1px solid
+}
+.upload-form input[type="file"] {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-250px);
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .main-chat {
+    margin-left: 0;
+  }
+  .chat-input-container {
+    left: 0;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #343541;
+    color: #fff;
+  }
+  .chat-container {
+    background: #343541;
+  }
+  .main-chat {
+    background-color: #40414f;
+  }
+  .chat-message.user {
+    background-color: #1e90ff;
+  }
+  .chat-message.assistant {
+    background-color: #565869;
+  }
+  .chat-input-container {
+    background-color: #40414f;
+  }
+}

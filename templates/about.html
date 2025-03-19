@@ -26,37 +26,40 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team">
-        <h2>Meet Our Team</h2>
-        <div class="team-container">
-            <div class="team-member">
-                <img src="{{ url_for('static', filename='images/guide.png') }}" alt="Guide">
-                <h3>Dr. A. Vanathi <p>Ph.D</p></h3>
-                <p>Project Guide</p>
-            </div>
-            <div class="team-member">
-                <img src="{{ url_for('static', filename='images/member1.png') }}" alt="Team Member 1">
-                <h3>Samuel P</h3>
-                <p>AI Engineer</p>
-            </div>
-            <div class="team-member">
-                <img src="{{ url_for('static', filename='images/member2.png') }}" alt="Team Member 2">
-                <h3>Arijit Das</h3>
-                <p>Researcher</p>
-            </div>
-            <div class="team-member">
-                <img src="{{ url_for('static', filename='images/member3.png') }}" alt="Team Member 3">
-                <h3>Siva Shankar</h3>
-                <p>Data Analyst</p>
-            </div>
-            <div class="team-member">
-                <img src="{{ url_for('static', filename='images/member4.png') }}" alt="Team Member 4">
-                <h3>Dorababu</h3>
-                <p>Frontend Developer</p>
-            </div>
-        </div>
-    </section>
-
+ <section class="team">
+  <h2>Meet Our Team</h2>
+  <div class="team-container">
+    <div class="team-guide-row">
+      <div class="team-guide">
+        <img src="{{ url_for('static', filename='images/guide.png') }}" alt="Guide">
+        <h3>Dr. A. Vanathi <span>Ph.D</span></h3>
+        <p>Project Guide</p>
+      </div>
+    </div>
+    <div class="team-members-row">
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='images/member1.png') }}" alt="Team Member 1">
+        <h3>Samuel P</h3>
+        <p>AI Engineer</p>
+      </div>
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='images/member2.png') }}" alt="Team Member 2">
+        <h3>Arijit Das</h3>
+        <p>Researcher</p>
+      </div>
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='images/member3.png') }}" alt="Team Member 3">
+        <h3>Siva Shankar</h3>
+        <p>Data Analyst</p>
+      </div>
+      <div class="team-member">
+        <img src="{{ url_for('static', filename='images/member4.png') }}" alt="Team Member 4">
+        <h3>Dorababu</h3>
+        <p>Frontend Developer</p>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 LAIWS. All Rights Reserved.</p>

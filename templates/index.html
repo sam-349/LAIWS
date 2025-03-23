@@ -18,7 +18,7 @@
         <li><a href="{{ url_for('about') }}"> About</a></li>
         <li><a href="{{ url_for('models') }}">Models</a></li>
       </ul>
-      <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
+      <button class="start-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
     </nav>
 
     <!-- Hero Section -->
@@ -26,7 +26,7 @@
       <div class="hero-content">
         <h1 class="hero-title showAnimation">AI power justice: A path to a more efficient legal system in india</h1>
         <p class="hero-text showAnimation">Advanced AI solutions for legal professionals, law firms, and researchers.</p>
-        <button class="contact-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
+        <button class="start-btn"><a href="{{ url_for('models') }}"> Get started</a></button>
       </div>
     </div>
   </div>
@@ -38,28 +38,31 @@
       <div class="feature-card left">
         <div class="feature-text">
           <h3>Legal Research</h3>
-          <p>Quickly find case laws and precedents with AI.
-             Access legal documents with AI-driven insights.</p>
+          <p>find relevant case laws, legal precedents, and statutes with AI-powered search.
+     Access vast legal databases with AI-driven insights, ensuring faster and more accurate legal research.
+     Stay updated with the latest changes in laws and regulations effortlessly.</p>
         </div>
-        <img src="{{ url_for('static', filename='images/legal research.png') }}" alt="Legal Research">
+        <img src="{{ url_for('static', filename='images/legal_search.png') }}" alt="Legal Research">
       </div>
 
       <div class="feature-card right">
         <div class="feature-text">
           <h3>Document Summarization</h3>
-          <p>Quickly extract key insights from legal d
-            ocuments and generate concise summaries.</p>
+          <p>Quickly extract key insights from lengthy legal documents, contracts, and case files.
+       AI-powered summarization helps lawyers and professionals save time by generating concise and structured summaries.
+       Improve efficiency by focusing on critical information without manually scanning large volumes of text.</p>
         </div>
-        <img src="{{ url_for('static', filename='images/document-summarizer.png') }}" alt="Document Summarization">
+        <img class="document_summarizer" src="{{ url_for('static', filename='images/document_summary.png') }}" alt="Document Summarization">
       </div>
 
       <div class="feature-card left">
         <div class="feature-text">
           <h3>Litigation Prediction</h3>
-          <p>Use AI-powered analysis to predict case outcomes.
-             Assess risks with advanced legal insights.</p>
+          <p>Use AI-powered analysis to predict case outcomes based on historical legal data and case trends.
+       Gain insights into potential legal risks and strengths to develop a more effective litigation strategy.
+       Enhance decision-making with data-driven predictions, helping lawyers prepare for court proceedings with greater confidence.</p>
         </div>
-        <img src="{{ url_for('static', filename='images/blind.png') }}" alt="Litigation Prediction">
+        <img src="{{ url_for('static', filename='images/litigation_prediction.png') }}" alt="Litigation Prediction">
       </div>
     </div>
   </section>

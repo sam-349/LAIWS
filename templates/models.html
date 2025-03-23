@@ -16,25 +16,28 @@
         </ul>
     </nav>
 
+
     <section class="model-main">
+        <div class="main-header">
+            <h1>Explore our Models</h1>
+            <p>Explore the latest legal Models </p>
+        </div>
         <div class="main">
             <div class="card" id="chat-with-documents">
                 <h3 class="card-title">Chat with Documents</h3>
                 <img class="card-img" src="{{ url_for('static', filename='images/document-icon.png') }}" alt="Chat With Documents">
-                <p class="card-text">content goes here</p>
                 <a href="{{ url_for('document')}}"><button class="card-btn">Check It</button></a>
             </div>
             <div class="card highlight" id="ai-chatbot">
                 <h3 class="card-title">AI ChatBot</h3>
                 <img class="card-img" src="{{ url_for('static', filename='images/chat-removebg-preview.png') }}" alt="chat-bot">
-                <p class="card-text">Chat Bot</p>
+
                 <a href="{{ url_for('chatbot')}}"><button class="card-btn">Check It</button></a>
             </div>
             <div class="card" id="ai-bot">
                 <h3 class="card-title">AI Bot</h3>
                 <img class="card-img" src="{{ url_for('static', filename='images/2003266-removebg-preview.png') }}" alt="Ai bot">
-                <p class="card-text">content goes here</p>
-                <a><button class="card-btn">Check It</button></a>
+                <a href="https://soulmachines-support.atlassian.net/wiki/spaces/SSAS/pages/1293189122/Native+Conversational+AI+Integrations" target="_parent"><button class="card-btn">Check It</button></a>
             </div>
         </div>
     </section>

@@ -55,7 +55,7 @@ nav ul li a:hover {
     color: #ffb400;
 }
 
-.contact-btn {
+.start-btn {
     color: #E8E8E8;
     background: #256BEE;
     border: 1px solid white;
@@ -67,25 +67,29 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-.contact-btn a {
+.start-btn a {
     text-decoration: none;
     color: #E8E8E8;
 }
 
-.contact-btn:hover {
-    background-color: rgba(0, 0, 0, 1.3);
+.start-btn:hover {
+    background-color: #6EACDA;
 }
 
 /* Main Section with background image */
 .main {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.8)),
+    background:
+        linear-gradient(to right, rgba(2, 21, 38, 0.8), rgba(2, 21, 38, 0.8)),  /* Solid overlay with transparency */
+        linear-gradient(to right, rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.3)),
         url("../images/hero.png") no-repeat center center/cover;
+    position: relative;
 }
+
 
 /* Hero Section */
 .hero {
     width: 100%;
-    height: 42rem;
+    height:100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,7 +101,8 @@ nav ul li a:hover {
     position: relative;
     z-index: 2;
     color: #E8E8E8;
-    max-width: 800px;
+    max-width: 50rem;
+    margin-bottom:10rem;
     /* Initial animation: fade and scale in from center */
     animation: heroAppear 0.7s ease-out forwards;
 }
@@ -115,19 +120,18 @@ nav ul li a:hover {
 }
 
 .hero-title {
-    font-size: 45px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-size: 2.8rem;
+    font-weight: 900;
     text-align: center;
 }
 
 .hero-text {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .hero-btn {
-    background-color: #ffb400;
+    background-color: #03346E;
     color: #E8E8E8;
     border: none;
     padding: 12px 25px;
@@ -139,15 +143,17 @@ nav ul li a:hover {
 }
 
 .hero-btn:hover {
-    background-color: #f39c12;
+    background-color: #6EACDA;
 }
 
 /* Features Section */
 .features {
     text-align: center;
     padding: 50px 20px 60px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    /*background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
       url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJavAG3ZcnwUE6e71p-1Jlaz295hPNo1C3CCmoKq-GvNmMUIUSZF2AIkINWUGTsG8q2UM&usqp=CAU') no-repeat center center/cover;
+    */
+    background: #021526;
     color: #E8E8E8;
 }
 
@@ -161,7 +167,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .feature-card {
@@ -171,14 +177,20 @@ nav ul li a:hover {
     width: 80%;
     max-width: 900px;
     padding: 20px;
+
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 6px 4px 10px rgba(255, 255, 255, 0.2);
     color: #E8E8E8;
 }
 
+
 .feature-card img {
-    width: 15rem;
-    height: 15rem;
+    width: 25rem;
+    height: 25rem;
+    border-radius:1rem;
+}
+.document_summarizer{
+
 }
 
 .feature-card.left {
@@ -193,7 +205,14 @@ nav ul li a:hover {
     width: 400px;
     text-align: justify;
     padding: 10px;
+    display:flex;
+    flex-direction:column;
 }
+
+.feature-text h3{
+    font-size:2rem;
+}
+
 
 .feature-card.right .feature-text {
     margin-left: 5rem;
@@ -233,7 +252,7 @@ nav ul li a:hover {
 /* Footer */
 footer {
     padding: 15px;
-    background: rgba(0, 0, 0, 0.8);
+    background:#021526;
     color: #E8E8E8;
     font-size: 14px;
 }

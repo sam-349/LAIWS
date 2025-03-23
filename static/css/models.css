@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background:black;
+    background:#021526;
+
 
 }
 
@@ -14,19 +15,22 @@ body {
     font-family: 'Poppins', sans-serif;
     height: 100vh;
     width: 100%;
-    background: black;
-    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJavAG3ZcnwUE6e71p-1Jlaz295hPNo1C3CCmoKq-GvNmMUIUSZF2AIkINWUGTsG8q2UM&usqp=CAU') no-repeat center center/cover;
+    background:
+        linear-gradient(to right, rgba(2, 21, 38, 0.8), rgba(2, 21, 38, 0.8)),  /* Solid overlay with transparency */
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("../images/model_bg.png") no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     color: white;
 }
+
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   background:black;
     padding: 15px 30px;
     color: white;
     animation:fadeIn 1s ease-in;
@@ -83,13 +87,30 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    margin-bottom:8rem;
     animation: fadeIn 1s ease-in-out;
 }
-
+.main-header{
+    text-align: center;
+}
+.main-header h1{
+    font-size:2rem;
+    margin:0;
+    animation:fadeIn 1s ease-in;
+}
+.main-header p{
+    color: #dcdcdc;
+    margin-bottom:4rem;
+    animation: fadeIn 1s ease-in-out;
+}
 .card {
     padding: 2rem;
     margin: 0 1rem;
     text-align: center;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    gap:10px;
     color: white;
     border: none;
     width: 300px;
@@ -101,22 +122,24 @@ nav ul li a:hover {
 .card.highlight {
     transform: scale(1.05);
     width:330px;
-
     box-shadow: 0 0 15px 5px white;
 }
 
 .card-img {
     width: 80px;
     height: 80px;
+    margin-bottom:1rem;
 }
 
 .card-btn {
     padding: 8px 16px;
     border: none;
     outline: none;
-    border-radius: 25px;
-    border: 1px solid white;
-    background: black;
+    border:none;
+    border-radius:1rem;
+    background: #03346E;
+    font-size:1rem;
+    font-weight:1rem;
     color: white;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;

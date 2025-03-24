@@ -23,16 +23,16 @@
             <h2>Upload PDF Files</h2>
          <form action="{{ url_for('document') }}" method="post" enctype="multipart/form-data">
                 <input type="file" name="pdf_files" accept="application/pdf" multiple required>
-                <button type="submit" name="upload_submit">Submit & Process</button>
+                <button type="submit" name="upload_submit" class="btn">Submit & Process</button>
             </form>
         </section>
 
         <!-- Question Answering Section -->
         <section>
             <h2>Ask a Question</h2>
-            <form action="/" method="post">
+            <form action="{{ url_for('document')}}" method="post">
                 <input type="text" name="user_question" placeholder="Enter your question here" required>
-                <button type="submit" name="ask_submit">Ask</button>
+                <button type="submit" name="ask_submit" class="btn">Ask</button>
             </form>
         </section>
 
@@ -40,7 +40,7 @@
         {% if answer %}
         <section>
             <h2>Answer</h2>
-            <p>{{ answer }}</p>
+            <p>{{ answer['output_text'] }}</p>
         </section>
         {% endif %}
 

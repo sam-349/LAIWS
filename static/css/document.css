@@ -72,17 +72,21 @@ input[type="text"], input[type="file"] {
 }
 
 button {
-    padding: 0.7rem 1.5rem;
-    background-color: #03346E;
-    outline:none;
-    border-radius:1rem;
-    color: #E2E2B6;
-    cursor: pointer;
-    border-radius: 3px;
+
 }
 
-button:hover {
-    background-color: #45a049;
+.btn{
+    padding: 0.7rem 1.5rem;
+    background: #03346E;
+    color: #E2E2B6;
+    cursor: pointer;
+    border-radius:1rem;
+    border:none;
+    outline:none;
+}
+.btn:hover {
+    background: #03334
+    D;
 }
 
 .flashes {
